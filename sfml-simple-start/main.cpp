@@ -13,7 +13,7 @@ sf::RenderWindow* setupGraphics(bool fullscreen)
     sf::VideoMode chosenMode;
     if (!fullscreen)
     {
-        chosenMode = sf::VideoMode(1280, 720, 24);
+        chosenMode = sf::VideoMode(sf::Vector2u(1280, 720), 24);
     }
     else
     {
@@ -22,7 +22,7 @@ sf::RenderWindow* setupGraphics(bool fullscreen)
         auto modes = sf::VideoMode::getFullscreenModes();
         for (unsigned int i = 0; i < modes.size(); i++)
         {
-            if (modes[i].width == 1920 && modes[i].height == 1080)
+            if (modes[i].size.x == 1920 && modes[i].size.y == 1080)
             {
                 modeFound = true;
                 chosenMode = modes[i];
@@ -33,7 +33,7 @@ sf::RenderWindow* setupGraphics(bool fullscreen)
         {
             for (unsigned int i = 0; i < modes.size(); i++)
             {
-                if (modes[i].width <= 1920)
+                if (modes[i].size.y <= 1920)
                 {
                     modeFound = true;
                     chosenMode = modes[i];
@@ -94,6 +94,8 @@ int main (int argc, char **argv) {
                     break;
                 case sf::Event::KeyPressed:
                     x += 1;
+                    break;
+                default:
                     break;
             }
         }
