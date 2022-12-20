@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -g -Wall -std=c++17
 
-INC=-I/usr/include -I../common -I./
+INC=-I./
 LIB=-L/usr/local/lib -lsfml-graphics -lsfml-system -lsfml-window
 
 
