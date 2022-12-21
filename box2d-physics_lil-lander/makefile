@@ -1,8 +1,8 @@
 CXX = g++
-CXXFLAGS = -g -Wall -std=c++0x
+CXXFLAGS = -g -Wall -std=c++17
 
 INC=-I/usr/include -I../common -I./
-LIB=-lsfml-graphics -lsfml-system -lsfml-window -lGL -lGLU -Llib/ -lbox2d
+LIB=-L/usr/local/lib -lsfml-graphics -lsfml-system -lsfml-window -lbox2d
 
 all: pre-build main-build
 
