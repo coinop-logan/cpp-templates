@@ -10,6 +10,7 @@
 
 int main()
 {
+    float cameraX = 0;
     // Create the window
     sf::RenderWindow window(sf::VideoMode(sf::Vector2u(800, 600)), "3D Triangle");
 
@@ -36,6 +37,9 @@ int main()
             {
                 window.close();
             }
+            if (event.type== sf::Event::KeyPressed){
+                cameraX += 1;
+            }
         }
 
         // Clear the window
@@ -43,7 +47,7 @@ int main()
 
         // Set the camera position
         glLoadIdentity();
-        gluLookAt(0.0f, 0.0f, 3.0f,  // Eye position
+        gluLookAt(cameraX, 0.0f, 3.0f,  // Eye position
                   0.0f, 0.0f, 0.0f,  // Look at position
                   0.0f, 1.0f, 0.0f); // Up vector
 
