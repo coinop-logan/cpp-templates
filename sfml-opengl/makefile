@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -g -Wall -std=c++17
 
 INC=-I/usr/include -I../common -I./
-LIB=-lsfml-graphics -lsfml-system -lsfml-window -lGL -lGLU -Llib/ -lbox2d
+LIB=-L/usr/local/lib -lsfml-graphics -lsfml-system -lsfml-window -framework OpenGL
 
 all: pre-build main-build
 
