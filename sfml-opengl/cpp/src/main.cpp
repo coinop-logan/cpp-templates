@@ -18,6 +18,7 @@ int main()
 
     // Set the viewport and projection matrix
     glViewport(0, 0, window.getSize().x, window.getSize().y);
+
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     GLfloat aspect = (GLfloat)window.getSize().x / (GLfloat)window.getSize().y;
